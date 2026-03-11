@@ -1,11 +1,82 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Card from "../components/Card.astro";
+import Button from "../components/Button.astro";
 ---
 
 <Layout>
-	<Welcome />
+	<Navbar />
+
+	<main class="container mx-auto px-6 py-12">
+		<div class="text-center mb-12">
+			<h1
+				class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-4"
+			>
+				Welcome to Astro
+			</h1>
+			<p class="text-lg sm:text-xl text-gray-600 mb-8">
+				Check out these awesome components!
+			</p>
+			<div
+				class="flex flex-col sm:flex-row gap-4 justify-center items-center"
+			>
+				<Button variant="primary" size="lg">Get Started</Button>
+				<Button variant="secondary" size="md">Learn More</Button>
+				<Button variant="outline" size="sm">Documentation</Button>
+			</div>
+		</div>
+
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+			<Card
+				title="Fast Performance"
+				image="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop"
+				imageAlt="Performance"
+			>
+				<p>
+					Build lightning-fast websites with modern web technologies
+					and best practices.
+				</p>
+				<div class="mt-4">
+					<Button variant="primary">Learn More</Button>
+				</div>
+			</Card>
+
+			<Card
+				title="Easy to Use"
+				image="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=300&fit=crop"
+				imageAlt="Easy to use"
+			>
+				<p>
+					Simple and intuitive API that makes building websites a
+					breeze.
+				</p>
+				<div class="mt-4">
+					<Button variant="secondary">Get Started</Button>
+				</div>
+			</Card>
+
+			<Card
+				title="Fully Customizable"
+				image="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400&h=300&fit=crop"
+				imageAlt="Customizable"
+			>
+				<p>
+					Tailor every aspect to match your unique vision and
+					requirements.
+				</p>
+				<div class="mt-4">
+					<Button variant="outline">Explore</Button>
+				</div>
+			</Card>
+			<!--Sample Card Test -->
+			<Card title="Testing" image="" imageAlt="Testing"
+				><p>This is a test description. No image card</p><div
+					class="mt-4"
+				>
+					<Button variant="secondary">Test Button Still</Button>
+				</div></Card
+			>
+		</div>
+	</main>
 </Layout>
