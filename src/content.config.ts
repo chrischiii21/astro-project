@@ -1,7 +1,7 @@
 import { defineCollection, z } from 'astro:content';
-import { file } from 'astro/loaders';
+import { file, glob } from 'astro/loaders';
 
-// Define the schema for services
+// Define the schema for services (JSON)
 const servicesCollection = defineCollection({
     loader: file("src/content/services/services.json"),
     schema: z.object({
@@ -13,6 +13,18 @@ const servicesCollection = defineCollection({
     }),
 });
 
+// Define the schema for blog posts (Markdown)
+const blogCollection = defineCollection({
+    loader: glob({ pattern: "**/*.md", base: "./src/content/blog" }),
+    schema: z.object({
+        title: z.string(),
+        pubDate: z.date(),
+        description: z.string(),
+        author: z.string(),
+    }),
+});
+
 export const collections = {
     'services': servicesCollection,
+    'blog': blogCollection,
 };
