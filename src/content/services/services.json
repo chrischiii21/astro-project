@@ -1,0 +1,44 @@
+[
+    {
+        "id": "web-development",
+        "title": "Web Development",
+        "description": "Build modern, responsive websites with cutting-edge technologies and best practices for optimal performance.",
+        "icon_name": "code",
+        "category": "development"
+    },
+    {
+        "id": "mobile-apps",
+        "title": "Mobile Applications",
+        "description": "Create native and cross-platform mobile apps that deliver exceptional user experiences across all devices.",
+        "icon_name": "smartphone",
+        "category": "development"
+    },
+    {
+        "id": "ui-ux-design",
+        "title": "UI/UX Design",
+        "description": "Design intuitive and beautiful user interfaces that enhance user engagement and drive conversions.",
+        "icon_name": "palette",
+        "category": "design"
+    },
+    {
+        "id": "digital-marketing",
+        "title": "Digital Marketing",
+        "description": "Boost your online presence with strategic marketing campaigns and data-driven growth strategies.",
+        "icon_name": "trending-up",
+        "category": "marketing"
+    },
+    {
+        "id": "cloud-solutions",
+        "title": "Cloud Solutions",
+        "description": "Migrate and optimize your infrastructure with scalable cloud solutions for improved performance.",
+        "icon_name": "cloud",
+        "category": "infrastructure"
+    },
+    {
+        "id": "data-analytics",
+        "title": "Data Analytics",
+        "description": "Transform your data into actionable insights with advanced analytics and visualization tools.",
+        "icon_name": "bar-chart",
+        "category": "analytics"
+    }
+]

@@ -1,32 +1,18 @@
 import { defineCollection, z } from 'astro:content';
-import { glob } from 'astro/loaders';
+import { file } from 'astro/loaders';
 
-// Define the schema for blog posts
-const blogCollection = defineCollection({
-    loader: glob({ pattern: "**/*.md", base: "./src/content/blog" }),
+// Define the schema for services
+const servicesCollection = defineCollection({
+    loader: file("src/content/services/services.json"),
     schema: z.object({
+        id: z.string(),
         title: z.string(),
         description: z.string(),
-        author: z.string(),
-        date: z.date(),
-        image: z.string().optional(),
-        tags: z.array(z.string()).optional(),
-        featured: z.boolean().default(false),
-    }),
-});
-
-// Define the schema for features/cards
-const featuresCollection = defineCollection({
-    loader: glob({ pattern: "**/*.md", base: "./src/content/features" }),
-    schema: z.object({
-        title: z.string(),
-        description: z.string(),
-        image: z.string(),
-        order: z.number(),
+        icon_name: z.string(),
+        category: z.enum(['development', 'design', 'marketing', 'infrastructure', 'analytics']),
     }),
 });
 
 export const collections = {
-    'blog': blogCollection,
-    'features': featuresCollection,
+    'services': servicesCollection,
 };

@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
 import Card from "../components/Card.astro";
 import Button from "../components/Button.astro";
+import ServicesGrid from "../components/ServicesGrid.astro";
 ---
 
 <Layout>
@@ -69,14 +70,9 @@ import Button from "../components/Button.astro";
 					<Button variant="outline">Explore</Button>
 				</div>
 			</Card>
-			<!--Sample Card Test -->
-			<Card title="Testing" image="" imageAlt="Testing"
-				><p>This is a test description. No image card</p><div
-					class="mt-4"
-				>
-					<Button variant="secondary">Test Button Still</Button>
-				</div></Card
-			>
 		</div>
 	</main>
+
+	<!-- Services Section from JSON -->
+	<ServicesGrid />
 </Layout>

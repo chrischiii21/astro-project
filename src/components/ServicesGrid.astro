@@ -1,0 +1,54 @@
+---
+import { getCollection } from "astro:content";
+import ServiceCard from "./ServiceCard.astro";
+
+// Load all services from JSON file
+const services = await getCollection("services");
+
+// Optional: Filter by category
+const { category } = Astro.props;
+const filteredServices = category
+    ? services.filter((service) => service.data.category === category)
+    : services;
+---
+
+<section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-6">
+        <!-- Section Header -->
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                Our Services
+            </h2>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                We provide comprehensive solutions to help your business grow
+                and succeed in the digital world.
+            </p>
+        </div>
+
+        <!-- Services Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {
+                filteredServices.map((service) => (
+                    <ServiceCard
+                        title={service.data.title}
+                        description={service.data.description}
+                        iconName={service.data.icon_name}
+                        category={service.data.category}
+                    />
+                ))
+            }
+        </div>
+
+        <!-- Category Filter Info -->
+        {
+            category && (
+                <div class="text-center mt-8">
+                    <p class="text-gray-600">
+                        Showing services in:{" "}
+                        <span class="font-semibold capitalize">{category}</span>
+                    </p>
+                </div>
+            )
+        }
+    </div>
+</section>
